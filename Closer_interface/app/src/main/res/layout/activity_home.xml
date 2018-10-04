@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_2316"
+    tools:context=".Home">
+
+    <ImageView
+        android:id="@+id/imgUser"
+        android:layout_width="150dp"
+        android:layout_height="143dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:src="@drawable/user"
+        tools:layout_editor_absoluteX="117dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <ImageButton
+        android:id="@+id/imgBtnStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="113dp"
+        android:background="@drawable/enter_chatroom"
+        android:src="@drawable/enter_chatroom"
+        tools:layout_editor_absoluteX="67dp"
+        tools:layout_editor_absoluteY="363dp" />
+
+    <TextView
+        android:id="@+id/txtView1"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="205dp"
+        android:text="使用者您好！"
+        android:textAlignment="textStart"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="125dp"
+        tools:layout_editor_absoluteY="173dp" />
+
+
+    <ImageView
+        android:id="@+id/imgViewBelow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:adjustViewBounds="true"
+        android:src="@drawable/below"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="423dp" />
+
+    <ImageButton
+        android:id="@+id/homeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="39dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="35dp"
+        android:background="@drawable/home_icon"
+        android:src="@drawable/home_icon"
+        tools:layout_editor_absoluteX="172dp"
+        tools:layout_editor_absoluteY="443dp" />
+
+    <TextView
+        android:id="@+id/settingTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="39dp"
+        android:text="設定"
+        tools:layout_editor_absoluteX="326dp"
+        tools:layout_editor_absoluteY="482dp" />
+
+    <TextView
+        android:id="@+id/homeTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="首頁"
+        tools:layout_editor_absoluteX="178dp"
+        tools:layout_editor_absoluteY="482dp" />
+
+    <ImageButton
+        android:id="@+id/settingBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/settingTxt"
+        android:layout_alignTop="@+id/homeBtn"
+        android:layout_marginLeft="39dp"
+        android:background="@drawable/setting_icon"
+        android:src="@drawable/setting_icon"
+        tools:layout_editor_absoluteX="317dp"
+        tools:layout_editor_absoluteY="443dp" />
+
+    <ImageButton
+        android:id="@+id/learnBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/homeBtn"
+        android:layout_marginStart="45dp"
+        android:layout_toStartOf="@+id/imgBtnStart"
+        android:background="@drawable/learn"
+        android:src="@drawable/learn"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="443dp" />
+
+    <TextView
+        android:id="@+id/learnTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="39dp"
+        android:text="學習頁面"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="482dp" />
+
+    <ImageView
+        android:id="@+id/imgTxtBox"
+        android:layout_width="233dp"
+        android:layout_height="139dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="190dp"
+        android:background="@drawable/box"
+        android:scaleType="fitXY"
+        android:src="@drawable/box"
+        tools:layout_editor_absoluteX="67dp"
+        tools:layout_editor_absoluteY="221dp" />
+
+    <TextView
+        android:id="@+id/txtView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imgTxtBox"
+        android:layout_centerHorizontal="true"
+        android:text="每日名言佳句"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="132dp"
+        tools:layout_editor_absoluteY="242dp" />
+
+    <TextView
+        android:id="@+id/txtView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="271dp"
+        android:layout_marginStart="102dp"
+        android:text="名言佳句內容...."
+        android:textAlignment="center"
+        android:textColor="@android:color/darker_gray"
+        tools:layout_editor_absoluteX="142dp"
+        tools:layout_editor_absoluteY="277dp" />
+
+</RelativeLayout>

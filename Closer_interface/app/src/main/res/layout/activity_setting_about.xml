@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_2316"
+    tools:context=".SettingAbout">
+
+    <ImageView
+        android:id="@+id/img3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:adjustViewBounds="true"
+        android:src="@drawable/below"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="434dp" />
+
+    <ImageView
+        android:id="@+id/img1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:adjustViewBounds="true"
+        android:src="@drawable/box_transparent_s"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="88dp" />
+
+    <ImageView
+        android:id="@+id/img2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/img1"
+        android:adjustViewBounds="true"
+        android:src="@drawable/box_transparent_s"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="26dp" />
+
+    <ImageButton
+        android:id="@+id/homeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="39dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="35dp"
+        android:background="@drawable/home_icon"
+        android:src="@drawable/home_icon_grey"
+        tools:layout_editor_absoluteX="172dp"
+        tools:layout_editor_absoluteY="443dp" />
+
+    <TextView
+        android:id="@+id/settingTxt"
+        android:layout_width="31dp"
+        android:layout_height="19dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="39dp"
+        android:text="設定"
+        tools:layout_editor_absoluteX="326dp"
+        tools:layout_editor_absoluteY="482dp" />
+
+    <TextView
+        android:id="@+id/home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="首頁"
+        tools:layout_editor_absoluteX="178dp"
+        tools:layout_editor_absoluteY="482dp" />
+
+    <ImageButton
+        android:id="@+id/settingBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/settingTxt"
+        android:layout_alignTop="@+id/homeBtn"
+        android:background="@drawable/setting_icon_purple"
+        android:src="@drawable/setting_icon_purple"
+        tools:layout_editor_absoluteX="317dp"
+        tools:layout_editor_absoluteY="443dp" />
+
+    <ImageButton
+        android:id="@+id/learnBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/homeBtn"
+        android:layout_marginStart="45dp"
+        android:background="@drawable/learn"
+        android:src="@drawable/learn"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="443dp" />
+
+    <TextView
+        android:id="@+id/learnTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="39dp"
+        android:text="學習頁面"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="482dp" />
+
+    <TextView
+        android:id="@+id/sexTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/learnBtn"
+        android:layout_marginTop="86dp"
+        android:text="最新版本"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="100dp" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/settingTxt"
+        android:layout_alignTop="@+id/sexTxt"
+        android:text="1.0.0"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="304dp"
+        tools:layout_editor_absoluteY="100dp" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/settingTxt"
+        android:layout_alignTop="@+id/textView17"
+        android:text="1.0.0"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="304dp"
+        tools:layout_editor_absoluteY="39dp" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/learnBtn"
+        android:layout_marginTop="21dp"
+        android:text="當前版本"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="39dp" />
+
+
+</RelativeLayout>
