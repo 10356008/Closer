@@ -33,7 +33,19 @@ namespace StudyHostExampleLinebot.Controllers
                     var repmsg = "";
                     if (LineEvent.message.type == "text") //收到文字
                     {  
-                        
+                        if(LineEvent.message.text == "使用說明")
+                        {
+                            repmsg = "";
+                            repmsg = $"您可以問我們關於社交上的問題!!!";
+                            this.ReplyMessage(LineEvent.replyToken, repmsg);
+                        }else if(LineEvent.message.text == "關於我們")
+                        {
+                            repmsg = "";
+                            repmsg = $"NTUB IMD";
+                            this.ReplyMessage(LineEvent.replyToken, repmsg);
+                        }
+                        else
+                        {
                             //建立 MsQnAMaker Client
                             var helper = new isRock.MsQnAMaker.Client(
                             new Uri(Endpoint), QnAKey);
@@ -47,7 +59,8 @@ namespace StudyHostExampleLinebot.Controllers
                             if (ret.FirstOrDefault().score > 0)
                                 responseText = ret.FirstOrDefault().answer;
                             //回覆
-                            this.ReplyMessage(LineEvent.replyToken, responseText);       
+                            this.ReplyMessage(LineEvent.replyToken, responseText);
+                        }          
                     }
                     if (LineEvent.message.type == "sticker") //收到貼圖
                         this.ReplyMessage(LineEvent.replyToken, 1, 2);
