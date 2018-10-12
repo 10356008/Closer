@@ -69,9 +69,10 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'cwTeXYen','Tw Cen MT', sans-serif;
-  /*font-family: "PT Serif", serif;*/
-  font-weight: bold; }
+	font-family: 'cwTeXYen', sans-serif;
+	/*font-family: "PT Serif", serif;*/
+	font-weight: bold;
+}
 
 button:focus {
   font-family: 'cwTeXYen','Tw Cen MT', sans-serif;
@@ -2711,18 +2712,20 @@ h6 {
 .f_title {
   margin-bottom: 35px; }
   .f_title h3 {
-    color: #fff;
-    font-size: 18px;
-    font-weight: bold;
-    font-family: "PT Serif", serif;
-    margin-bottom: 0px; }
+	color: #fff;
+	font-size: 18px;
+	font-weight: bold;
+	font-family: 'cwTeXYen', 'Tw Cen MT', sans-serif;
+	margin-bottom: 0px;
+}
 
 .ab_widget p {
-  font-size: 14px;
-  line-height: 24px;
-  font-family: "Roboto", sans-serif;
-  color: #777777;
-  margin-bottom: 30px; }
+	font-size: 14px;
+	line-height: 24px;
+	font-family: 'cwTeXYen', 'Tw Cen MT', sans-serif;
+	color: #777777;
+	margin-bottom: 30px;
+}
   .ab_widget p a {
     color: #fa333f; }
   .ab_widget p + p {
