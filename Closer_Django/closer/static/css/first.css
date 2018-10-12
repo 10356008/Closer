@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+html, body{
+}
+
+div.jumbotron {
+    width:800px;
+    height:40px;
+}
+
+h1.display-4{
+    color: #1c7430;
+    font-family: 'Permanent Marker', cursive;
+}
