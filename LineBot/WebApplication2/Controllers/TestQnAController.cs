@@ -44,6 +44,135 @@ namespace StudyHostExampleLinebot.Controllers
                             repmsg = $"NTUB IMD";
                             this.ReplyMessage(LineEvent.replyToken, repmsg);
                         }
+                        else if (LineEvent.message.text == "學習頁面")
+                        {
+                            var flex = @"
+                                [
+                                {
+                                    ""type"": ""flex"",
+                                    ""altText"": ""This is a Flex Message"",
+                                    ""contents"":
+                                {
+                                  ""type"": ""bubble"",
+                                  ""header"": {
+                                                ""type"": ""box"",
+                                    ""layout"": ""horizontal"",
+                                    ""contents"": [
+                                      {
+                                        ""type"": ""text"",
+                                        ""text"": ""學習頁面"",
+                                        ""weight"": ""bold"",
+                                        ""color"": ""#aaaaaa"",
+                                        ""size"": ""sm""
+                                      }
+                                    ]
+                                  },
+                                  ""hero"": {
+                                    ""type"": ""image"",
+                                    ""url"": ""https://imageshack.com/a/img924/8986/kuGMSb.png"",
+                                    ""size"": ""full"",
+                                    ""aspectRatio"": ""20:13"",
+                                    ""aspectMode"": ""cover"",
+                                    ""action"": {
+                                      ""type"": ""uri"",
+                                      ""uri"": ""http://140.131.114.147:3000/""
+                                    }
+                                  },
+                                  ""body"": {
+                                    ""type"": ""box"",
+                                    ""layout"": ""horizontal"",
+                                    ""spacing"": ""md"",
+                                    ""contents"": [
+                                      {
+                                        ""type"": ""box"",
+                                        ""layout"": ""vertical"",
+                                        ""flex"": 1,
+                                        ""contents"": [
+                                          {
+                                            ""type"": ""image"",
+                                            ""url"": ""https://imageshack.com/a/img922/3247/oaCfJg.jpg"",
+                                            ""aspectMode"": ""cover"",
+                                            ""aspectRatio"": ""4:3"",
+                                            ""size"": ""sm"",
+                                            ""gravity"": ""bottom""
+                                          },
+                                          {
+                                            ""type"": ""image"",
+                                            ""url"": ""https://imageshack.com/a/img922/4655/RrcctW.jpg"",
+                                            ""aspectMode"": ""cover"",
+                                            ""aspectRatio"": ""4:3"",
+                                            ""margin"": ""md"",
+                                            ""size"": ""sm""
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        ""type"": ""box"",
+                                        ""layout"": ""vertical"",
+                                        ""flex"": 2,
+                                        ""contents"": [
+                                          {
+                                            ""type"": ""text"",
+                                            ""text"": ""你的敵人，可能就是你的救星。"",
+                                            ""gravity"": ""top"",
+                                            ""size"": ""xs"",
+                                            ""flex"": 1
+                                          },
+                                          {
+                                            ""type"": ""separator""
+                                          },
+                                          {
+                                            ""type"": ""text"",
+                                            ""text"": ""完美溝通術:技巧大有學問的9項對話技巧"",
+                                            ""gravity"": ""center"",
+                                            ""size"": ""xs"",
+                                            ""flex"": 2
+                                          },
+                                          {
+                                            ""type"": ""separator""
+                                          },
+                                          {
+                                            ""type"": ""text"",
+                                            ""text"": ""你是腦補王嗎？小心變成偏執狂"",
+                                            ""gravity"": ""center"",
+                                            ""size"": ""xs"",
+                                            ""flex"": 2
+                                          },
+                                          {
+                                            ""type"": ""separator""
+                                          },
+                                          {
+                                            ""type"": ""text"",
+                                            ""text"": ""你是團體中的絆腳石嗎？"",
+                                            ""gravity"": ""bottom"",
+                                            ""size"": ""xs"",
+                                            ""flex"": 1
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  ""footer"": {
+                                    ""type"": ""box"",
+                                    ""layout"": ""horizontal"",
+                                    ""contents"": [
+                                      {
+                                        ""type"": ""button"",
+                                        ""action"": {
+                                          ""type"": ""uri"",
+                                          ""label"": ""更多內容"",
+                                          ""uri"": ""http://140.131.114.147:3000/""
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                                }
+                                ]
+                                ";
+
+                            this.PushMessagesWithJSON(AdminUserId,flex);
+                        }
                         else
                         {
                             //建立 MsQnAMaker Client
@@ -75,6 +204,7 @@ namespace StudyHostExampleLinebot.Controllers
                 //response OK
                 return Ok();
             }
+
         }
     }
 }

@@ -5,12 +5,12 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace WebApplication2.Controllers
+namespace CloserLineBot.Controllers
 {
     public class LineBotWebHookController : isRock.LineBot.LineWebHookControllerBase
     {
         const string channelAccessToken = "BXFOUD+4p4GuBzEly7y4O2khG8qmxaBttbQwV+4qjYcOTAVIO4nKM+MvQCt8YbYFuY3G/vdPeKhW55wLX4ucuTAjlZwHTyhf9PfCZDbmXW8R1FLYhMBARftvIZ/ao3mInNlusj4zwtvSCAvNcJdsIAdB04t89/1O/w1cDnyilFU=";
-        const string AdminUserId= "U04fcc2c004642a37234aa6767448b58c";
+        const string AdminUserId = "U04fcc2c004642a37234aa6767448b58c";
 
         [Route("api/LineWebHookSample")]
         [HttpPost]
@@ -28,7 +28,7 @@ namespace WebApplication2.Controllers
                 if (LineEvent.type == "message")
                 {
                     if (LineEvent.message.type == "text") //收到文字
-                        this.ReplyMessage(LineEvent.replyToken, "你說了--->" + LineEvent.message.text);
+                        this.ReplyMessage(LineEvent.replyToken, "你說了:" + LineEvent.message.text);
                     if (LineEvent.message.type == "sticker") //收到貼圖
                         this.ReplyMessage(LineEvent.replyToken, 1, 2);
                 }
