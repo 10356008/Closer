@@ -28,6 +28,9 @@ var loginSuccess = require('./routes/loginSuccess');
 var loginFail = require('./routes/loginFail');
 var logout = require('./routes/logout');
 
+//----------------------新增--------------------------
+var writingsAddForm = require('./routes/writingsAddForm');
+var writingsAdd = require('./routes/writingsAdd');
 
 
 var app = express();
@@ -90,6 +93,11 @@ app.use('/login', login);
 app.use('/loginSuccess', loginSuccess);
 app.use('/loginFail', loginFail);
 app.use('/logout', logout);
+
+//----------------------新增--------------------------
+app.use('/writingsAddForm', writingsAddForm);
+app.use('/writingsAdd', writingsAdd);
+
 
 
 // catch 404 and forward to error handler
