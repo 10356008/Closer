@@ -7,6 +7,11 @@ using System.Web.Http;
 
 namespace StudyHostExampleLinebot.Controllers
 {
+    public class Module
+    { 
+        public static string response; //靜態變數可以共用     
+    }
+
     public class TestQnAController : isRock.LineBot.LineWebHookControllerBase
     {
         const string channelAccessToken = "BXFOUD+4p4GuBzEly7y4O2khG8qmxaBttbQwV+4qjYcOTAVIO4nKM+MvQCt8YbYFuY3G/vdPeKhW55wLX4ucuTAjlZwHTyhf9PfCZDbmXW8R1FLYhMBARftvIZ/ao3mInNlusj4zwtvSCAvNcJdsIAdB04t89/1O/w1cDnyilFU=";
@@ -27,6 +32,7 @@ namespace StudyHostExampleLinebot.Controllers
                 var LineEvent = this.ReceivedMessage.events.FirstOrDefault();
                 //配合Line verify 
                 if (LineEvent.replyToken == "00000000000000000000000000000000") return Ok();
+
                 //回覆訊息
                 if (LineEvent.type == "message")
                 {
@@ -35,7 +41,7 @@ namespace StudyHostExampleLinebot.Controllers
 
                     if (LineEvent.message.type == "text") //收到文字
                     {
-                        if(reply == "嗨" || reply == "你好" || reply == "妳好" || reply == "哈囉" || reply == "哈摟" || reply == "哈嘍" || reply == "Hello" || reply == "Hi" || reply == "HELLO" || reply == "HI" || reply == "hello" || reply == "hi")
+                        if (reply == "嗨" || reply == "你好" || reply == "妳好" || reply == "哈囉" || reply == "哈摟" || reply == "哈嘍" || reply == "Hello" || reply == "Hi" || reply == "HELLO" || reply == "HI" || reply == "hello" || reply == "hi")
                         {
                             //建立actions，作為ButtonTemplate的用戶回覆行為
                             var actions = new List<isRock.LineBot.TemplateActionBase>();
@@ -59,7 +65,7 @@ namespace StudyHostExampleLinebot.Controllers
                             actions.Add(new isRock.LineBot.PostbackActon() { label = "開始聊天", data = "有什麼社交上的困擾嗎?" });
                             actions.Add(new isRock.LineBot.UriActon() { label = "瀏覽學習頁面", uri = new Uri("http://140.131.114.147/detailsView") });
 
-
+                            //ButtonTemplate內容
                             var ButtonTemplateMsg = new isRock.LineBot.ButtonsTemplate()
                             {
                                 title = "使用說明",
@@ -67,6 +73,7 @@ namespace StudyHostExampleLinebot.Controllers
                                 altText = "使用說明 ButtonTemplate",
                                 actions = actions
                             };
+                            //推播ButtonTemplate給用戶
                             this.PushMessage(LineEvent.source.userId, ButtonTemplateMsg);
                         }
                         else if (reply == "關於我們")
@@ -89,127 +96,125 @@ namespace StudyHostExampleLinebot.Controllers
                         else if (reply == "學習頁面")
                         {
                             var flex = @"
-                                [
-                                {
-                                    ""type"": ""flex"",
-                                    ""altText"": ""Closer | Learn Web"",
-                                    ""contents"":
-                                {
-                                  ""type"": ""bubble"",
-                                  ""header"": {
-                                                ""type"": ""box"",
-                                    ""layout"": ""horizontal"",
-                                    ""contents"": [
-                                      {
-                                        ""type"": ""text"",
-                                        ""text"": ""學習頁面"",
-                                        ""weight"": ""bold"",
-                                        ""color"": ""#aaaaaa"",
-                                        ""size"": ""sm""
-                                      }
-                                    ]
-                                  },
-                                  ""hero"": {
-                                    ""type"": ""image"",
-                                    ""url"": ""https://imageshack.com/a/img924/8986/kuGMSb.png"",
-                                    ""size"": ""full"",
-                                    ""aspectRatio"": ""20:13"",
-                                    ""aspectMode"": ""cover""
-                                  },
-                                  ""body"": {
-                                    ""type"": ""box"",
-                                    ""layout"": ""horizontal"",
-                                    ""spacing"": ""md"",
-                                    ""contents"": [
-                                      {
-                                        ""type"": ""box"",
-                                        ""layout"": ""vertical"",
-                                        ""flex"": 1,
+                                    [
+                                    {
+                                        ""type"": ""flex"",
+                                        ""altText"": ""Closer | Learn Web"",
+                                        ""contents"":
+                                    {
+                                      ""type"": ""bubble"",
+                                      ""header"": {
+                                                    ""type"": ""box"",
+                                        ""layout"": ""horizontal"",
                                         ""contents"": [
                                           {
-                                            ""type"": ""image"",
-                                            ""url"": ""https://imageshack.com/a/img922/3247/oaCfJg.jpg"",
-                                            ""aspectMode"": ""cover"",
-                                            ""aspectRatio"": ""4:3"",
-                                            ""size"": ""sm"",
-                                            ""gravity"": ""bottom""
-                                          },
-                                          {
-                                            ""type"": ""image"",
-                                            ""url"": ""https://imageshack.com/a/img922/4655/RrcctW.jpg"",
-                                            ""aspectMode"": ""cover"",
-                                            ""aspectRatio"": ""4:3"",
-                                            ""margin"": ""md"",
+                                            ""type"": ""text"",
+                                            ""text"": ""學習頁面"",
+                                            ""weight"": ""bold"",
+                                            ""color"": ""#aaaaaa"",
                                             ""size"": ""sm""
                                           }
                                         ]
                                       },
-                                      {
+                                      ""hero"": {
+                                        ""type"": ""image"",
+                                        ""url"": ""https://imageshack.com/a/img924/8986/kuGMSb.png"",
+                                        ""size"": ""full"",
+                                        ""aspectRatio"": ""20:13"",
+                                        ""aspectMode"": ""cover""
+                                      },
+                                      ""body"": {
                                         ""type"": ""box"",
-                                        ""layout"": ""vertical"",
-                                        ""flex"": 2,
+                                        ""layout"": ""horizontal"",
+                                        ""spacing"": ""md"",
                                         ""contents"": [
                                           {
-                                            ""type"": ""text"",
-                                            ""text"": ""你的敵人，可能就是你的救星。"",
-                                            ""gravity"": ""top"",
-                                            ""size"": ""xs"",
-                                            ""flex"": 1
+                                            ""type"": ""box"",
+                                            ""layout"": ""vertical"",
+                                            ""flex"": 1,
+                                            ""contents"": [
+                                              {
+                                                ""type"": ""image"",
+                                                ""url"": ""https://imageshack.com/a/img922/3247/oaCfJg.jpg"",
+                                                ""aspectMode"": ""cover"",
+                                                ""aspectRatio"": ""4:3"",
+                                                ""size"": ""sm"",
+                                                ""gravity"": ""bottom""
+                                              },
+                                              {
+                                                ""type"": ""image"",
+                                                ""url"": ""https://imageshack.com/a/img922/4655/RrcctW.jpg"",
+                                                ""aspectMode"": ""cover"",
+                                                ""aspectRatio"": ""4:3"",
+                                                ""margin"": ""md"",
+                                                ""size"": ""sm""
+                                              }
+                                            ]
                                           },
                                           {
-                                            ""type"": ""separator""
-                                          },
+                                            ""type"": ""box"",
+                                            ""layout"": ""vertical"",
+                                            ""flex"": 2,
+                                            ""contents"": [
+                                              {
+                                                ""type"": ""text"",
+                                                ""text"": ""你的敵人，可能就是你的救星。"",
+                                                ""gravity"": ""top"",
+                                                ""size"": ""xs"",
+                                                ""flex"": 1
+                                              },
+                                              {
+                                                ""type"": ""separator""
+                                              },
+                                              {
+                                                ""type"": ""text"",
+                                                ""text"": ""完美溝通術:技巧大有學問的9項對話技巧"",
+                                                ""gravity"": ""center"",
+                                                ""size"": ""xs"",
+                                                ""flex"": 2
+                                              },
+                                              {
+                                                ""type"": ""separator""
+                                              },
+                                              {
+                                                ""type"": ""text"",
+                                                ""text"": ""你是腦補王嗎？小心變成偏執狂"",
+                                                ""gravity"": ""center"",
+                                                ""size"": ""xs"",
+                                                ""flex"": 2
+                                              },
+                                              {
+                                                ""type"": ""separator""
+                                              },
+                                              {
+                                                ""type"": ""text"",
+                                                ""text"": ""你是團體中的絆腳石嗎？"",
+                                                ""gravity"": ""bottom"",
+                                                ""size"": ""xs"",
+                                                ""flex"": 1
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      ""footer"": {
+                                        ""type"": ""box"",
+                                        ""layout"": ""horizontal"",
+                                        ""contents"": [
                                           {
-                                            ""type"": ""text"",
-                                            ""text"": ""完美溝通術:技巧大有學問的9項對話技巧"",
-                                            ""gravity"": ""center"",
-                                            ""size"": ""xs"",
-                                            ""flex"": 2
-                                          },
-                                          {
-                                            ""type"": ""separator""
-                                          },
-                                          {
-                                            ""type"": ""text"",
-                                            ""text"": ""你是腦補王嗎？小心變成偏執狂"",
-                                            ""gravity"": ""center"",
-                                            ""size"": ""xs"",
-                                            ""flex"": 2
-                                          },
-                                          {
-                                            ""type"": ""separator""
-                                          },
-                                          {
-                                            ""type"": ""text"",
-                                            ""text"": ""你是團體中的絆腳石嗎？"",
-                                            ""gravity"": ""bottom"",
-                                            ""size"": ""xs"",
-                                            ""flex"": 1
+                                            ""type"": ""button"",
+                                            ""action"": {
+                                              ""type"": ""uri"",
+                                              ""label"": ""更多內容"",
+                                              ""uri"": ""http://140.131.114.147""
+                                            }
                                           }
                                         ]
                                       }
+                                    }
+                                    }
                                     ]
-                                  },
-                                  ""footer"": {
-                                    ""type"": ""box"",
-                                    ""layout"": ""horizontal"",
-                                    ""contents"": [
-                                      {
-                                        ""type"": ""button"",
-                                        ""action"": {
-                                          ""type"": ""uri"",
-                                          ""label"": ""更多內容"",
-                                          ""uri"": ""http://140.131.114.147""
-                                        }
-                                      }
-                                    ]
-                                  }
-                                }
-                                }
-                                ]
-                                ";
-
-
+                                    ";
                             this.PushMessagesWithJSON(LineEvent.source.userId, flex);
                         }
                         else
@@ -221,28 +226,42 @@ namespace StudyHostExampleLinebot.Controllers
                             var ret = (from c in QnAResponse.answers
                                        orderby c.score descending
                                        select c
-                                    ).Take(1);
+                                      ).Take(1);
 
                             var responseText = UnknowAnswer;
                             if (ret.FirstOrDefault().score > 0)
                                 responseText = ret.FirstOrDefault().answer;
                             //回覆
                             this.ReplyMessage(LineEvent.replyToken, responseText);
+                            Module.response = reply;
 
-                            //建立actions，作為ButtonTemplate的用戶回覆行為
-                            var actions = new List<isRock.LineBot.TemplateActionBase>();
-                            actions.Add(new isRock.LineBot.PostbackActon() { label = "繼續聊天", data = "還想問些什麼呢?" });
-                            actions.Add(new isRock.LineBot.PostbackActon() { label = "結束聊天", data = "結束" });
-
-
-                            var ButtonTemplateMsg = new isRock.LineBot.ButtonsTemplate()
+                            if (responseText == UnknowAnswer)
                             {
-                                title = "還想問些什麼嗎?",
-                                text = "選擇:",
-                                altText = "ButtonTemplate",
-                                actions = actions
-                            };
-                            this.PushMessage(LineEvent.source.userId, ButtonTemplateMsg);
+                                var userInfo = this.GetUserInfo(LineEvent.source.userId);
+                                string managerText = "";
+                                managerText = "用戶ID : " + LineEvent.source.userId + "\n" +
+                                        $"用戶名稱：{userInfo.displayName}" + "\n" +
+                                        "沒有在QnA Maker的問題：" + Module.response;
+
+                                this.PushMessage(AdminUserId, managerText);
+                            }
+                            else
+                            {
+                                //建立actions，作為ButtonTemplate的用戶回覆行為
+                                var actions = new List<isRock.LineBot.TemplateActionBase>();
+                                actions.Add(new isRock.LineBot.PostbackActon() { label = "繼續聊天", data = "還想問些什麼呢?" });
+                                actions.Add(new isRock.LineBot.PostbackActon() { label = "結束聊天", data = "結束" });
+
+
+                                var ButtonTemplateMsg = new isRock.LineBot.ButtonsTemplate()
+                                {
+                                    title = "還想問些什麼嗎?",
+                                    text = "選擇:",
+                                    altText = "ButtonTemplate",
+                                    actions = actions
+                                };
+                                this.PushMessage(LineEvent.source.userId, ButtonTemplateMsg);
+                            }
 
                         }
                     }
@@ -254,9 +273,9 @@ namespace StudyHostExampleLinebot.Controllers
                     var data = LineEvent.postback.data;
                     var repmsg = "";
 
-                    if(data == "結束")
+                    if (data == "結束")
                     {
-                        //建立actions，作為ButtonTemplate的用戶回覆行為
+                    //建立actions，作為ButtonTemplate的用戶回覆行為
                         var actions = new List<isRock.LineBot.TemplateActionBase>();
                         actions.Add(new isRock.LineBot.PostbackActon() { label = "有", data = "有幫助" });
                         actions.Add(new isRock.LineBot.PostbackActon() { label = "沒有", data = "沒有幫助" });
@@ -271,15 +290,22 @@ namespace StudyHostExampleLinebot.Controllers
                         };
                         this.PushMessage(LineEvent.source.userId, ButtonTemplateMsg);
                     }
-                    else if(data == "有幫助")
+                    else if (data == "有幫助")
                     {
                         repmsg = "感謝您本次的提問！您的回饋使我們更加進步。";
                         this.ReplyMessage(LineEvent.replyToken, repmsg);
                     }
                     else if (data == "沒有幫助")
                     {
+                        var userInfo = this.GetUserInfo(LineEvent.source.userId);
+                        string managerText = "";
                         repmsg = "感謝您本次的提問！我們會針對這次的對談進行修正。";
+                        managerText = "用戶ID : " + LineEvent.source.userId + "\n" +
+                                        $"用戶名稱：{userInfo.displayName}" + "\n" +
+                                       "沒有幫助的訊息：" + Module.response;
+
                         this.ReplyMessage(LineEvent.replyToken, repmsg);
+                        this.PushMessage(AdminUserId, managerText);
                     }
                     else
                     {
@@ -300,6 +326,9 @@ namespace StudyHostExampleLinebot.Controllers
 
         }
 
+            
+
 
     }
+
 }
