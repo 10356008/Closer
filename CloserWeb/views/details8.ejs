@@ -1,0 +1,222 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <title>Closer | Learn Web | Social Articals</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="vendors/linericon/style.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
+    <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
+    <link rel="stylesheet" href="vendors/animate-css/animate.css">
+    <link rel="stylesheet" href="vendors/popup/magnific-popup.css">
+    <!-- main css -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- add main css -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/util.css">
+
+    <!-- Material Design Lite CSS -->
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.indigo-pink.min.css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+</head>
+<body>
+        
+        <!--================Header Menu Area =================-->
+        <header class="header_area">
+          <div class="main_menu">
+            <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <a class="navbar-brand logo_h" href="/"><img src="images/logo.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+              <ul class="nav navbar-nav menu_nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="/">首頁</a></li> 
+                <li class="nav-item"><a class="nav-link" href="/about">關於我們</a></li> 
+                <li class="nav-item submenu dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">學習頁面</a>
+                  <ul class="dropdown-menu">
+                    <li class="nav-item"><a class="nav-link" href="/detailsView">社交文章</a>
+                    <li class="nav-item"><a class="nav-link" href="/detailsView">心理測驗</a></li>
+                  </ul>
+                </li> 
+                <li class="nav-item"><a class="nav-link" href="/contact">聯絡我們</a></li>
+                <li class="nav-item"><a class="nav-link" href="/loginForm">管理者登入</a></li>
+              </ul>
+            </div> 
+            </div>
+              </nav>
+            </div>
+        </header>
+      <!--================Header Menu Area =================-->
+      
+      <!--================Home Banner Area =================-->
+      <section class="banner_area">
+          <div class="box_1620">
+      <div class="banner_inner d-flex align-items-center">
+        <div class="container">
+          <div class="banner_content text-center">
+            <!--<h2>Project Details</h2>
+            <div class="page_link">
+              <a href="index.html">Home</a>
+              <a href="projects.html">Projects</a>
+              <a href="project-details.html">Project Details</a>
+            </div>-->
+          </div>
+        </div>
+      </div>
+          </div>
+      </section>
+      <!--================End Home Banner Area =================-->
+     
+    
+    
+    
+    <!--==========================================-->
+    <div class="container">
+        
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        <div class="content">
+            <h2 class="title"><br/><br/>文章</h2>   
+            
+            <p>
+              <!--********************************************-->
+              <div class="wrap-table100">
+                <div class="table100">
+                  <table width="100%" border="0" class="dataList">
+                    <!--~~~~~~~~~~~~~~~~~~~~~~-->                 
+                    <tr>
+                        <td width="300"><a span><!--項目--></a span></td>
+                        <td width="300"><a span><!--內容--></a span></td>                        
+                    </tr>
+                    <!--~~~~~~~~~~~~~~~~~~~~~~-->                  
+                    <tr>
+                        <td><a span><!--文章編號--></a span></td>
+                        <td><font color="#fff"><a span><%= data[0].writingsID %></a span></font></td>                        
+                    </tr>
+                    <tr>
+                        <td><a span><!--文章標題--></a span></td>
+                        <td><font size="5"><strong><a span><%= data[0].writingsName %></font></strong></a span></td>                        
+                    </tr>
+					
+					<tr>
+                        <td><a span><!--編輯--></a span></td>
+                        <td><a span><%= data[0].notes %></a span></td>                        
+                    </tr> 
+					
+                    <tr>
+                        <td><a span><!--內容--></a span></td>
+                        <td style= "word-break:break-all; " width="100px"><font size="4"><PRE><a span><%= data[0].writingsContent %></a span></PRE></font></td>                        
+                    </tr>
+                 
+                    <tr>
+                        <td><a span><!--更改時間--></a span></td>
+                        <td><a span><%= moment(data[0].editDate).format("YYYY-MM-DD")  %></a span></td>                        
+                    </tr>                                                                              
+                    <!--~~~~~~~~~~~~~~~~~~~~~~-->                      
+                </table> 
+                </div>
+              
+              
+              
+              </div>   
+              <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->      
+	            <div>
+              <!--********************************************-->
+              <!--<button data-social="twitter">Share this to Twitter</button>
+              <button data-social="facebook">Share this to Facebook</button>
+              <button data-social="linkedin">Share this to LinkedIn</button>
+              <button data-social="googleplus">Google+</button>-->
+
+              
+              
+              <div style="margin-top:40px;margin-bottom:40px;margin-left:5px;margin-right:5px;text-align:center;">
+
+                <!-- Twitter -->
+                <a href="https://twitter.com/home?status=" title="Share on Twitter" target="_blank" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--twitter"><i class="fa fa-twitter fa-fw"></i> Twitter</a>
+                 <!-- Facebook -->
+                <a href="https://www.facebook.com/sharer/sharer.php?u=" title="Share on Facebook" target="_blank" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--facebook"><i class="fa fa-facebook fa-fw"></i> Facebook</a>
+                <!-- Google+ -->
+                <a href="https://plus.google.com/share?url=" title="Share on Google+" target="_blank" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--googleplus"><i class="fa fa-google-plus fa-fw"></i> Google+</a>
+                <!-- StumbleUpon -->
+                <a href="http://www.stumbleupon.com/submit?url=" title="Share on StumbleUpon" target="_blank" data-placement="top" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--stumbleupon"><i class="fa fa-stumbleupon fa-fw"></i> Stumbleupon</a>
+                <!-- LinkedIn --> 
+                <a href="https://www.linkedin.com/shareArticle?mini=true&url=&title=&summary=" title="Share on LinkedIn" target="_blank" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--linkedin"><i class="fa fa-linkedin fa-fw"></i> LinkedIn</a>
+                
+                
+
+              </div>
+    </div>
+<!--================Instagram Area =================-->
+<section class="instagram_area">
+  <div class="container box_1620">
+    <div class="insta_btn">
+      <a class="btn theme_btn" href="https://koobii.com.tw/">kobbi高校誌官網</a>
+    </div>
+    <div class="instagram_image row m0">
+      <a><img src="images/instagram/ins-1.jpg" alt=""></a>
+      <a><img src="images/instagram/ins-2.jpg" alt=""></a>
+      <a><img src="images/instagram/ins-3.jpg" alt=""></a>
+      <a><img src="images/instagram/ins-4.jpg" alt=""></a>
+      <a><img src="images/instagram/ins-5.jpg" alt=""></a>
+      <a><img src="images/instagram/ins-6.jpg" alt=""></a>
+    </div>
+  </div>
+</section>
+<!--================End Instagram Area =================-->
+
+<!--================Footer Area =================-->
+<footer class="footer_area">
+  <div class="container">
+    <div class="row footer_inner">
+      <div class="col-lg-5 col-sm-6">
+        <aside class="f_widget ab_widget">
+          <div class="f_title">
+            <h3>聯絡我們</h3>
+          </div>
+          <p>國立臺北商業大學 資訊管理系 <br />校址:100台北市中正區濟南路一段321號<br />電話:(02)33222777<br />統一編號:03763608</p>
+          <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</p>
+        </aside>
+      </div>
+  </div>
+</footer>
+<!--================End Footer Area =================-->     
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/stellar.js"></script>
+<script src="vendors/lightbox/simpleLightbox.min.js"></script>
+<script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
+<script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
+<script src="vendors/isotope/isotope.pkgd.min.js"></script>
+<script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+<script src="vendors/popup/jquery.magnific-popup.min.js"></script>
+<script src="js/jquery.ajaxchimp.min.js"></script>
+<script src="vendors/counter-up/jquery.waypoints.min.js"></script>
+<script src="vendors/counter-up/jquery.counterup.js"></script>
+<script src="js/mail-script.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/goodshare.js/4.1.2/goodshare.min.js"></script>  
+<script src="js/js.js"></script>    
+</body>
+</html>

@@ -36,10 +36,15 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav ml-auto">
-							<li class="nav-item"><a class="nav-link" href="/managerindex">查詢文章</a></li> 
-							<li class="nav-item"><a class="nav-link" href="/writingsAddForm">新增文章</a></li> 
-							<li class="nav-item"><a class="nav-link" href="/managerindex">刪除文章</a></li> 
-							<li class="nav-item"><a class="nav-link" href="/managerindex">修改文章</a></li>
+							<li class="nav-item"><a class="nav-link" href="/detailsAddForm">新增文章</a></li> 
+                                <li class="nav-item submenu dropdown">
+									<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">管理文章</a>
+									<ul class="dropdown-menu">
+										<li class="nav-item"><a class="nav-link" href="/detailsOneItemQuery">查詢文章</a>
+                                        <li class="nav-item"><a class="nav-link" href="/detailsOneItemQuery">刪除文章</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="/detailsOneItemQuery">更改文章</a></li>
+									</ul>
+								</li>
 							<li class="nav-item submenu dropdown">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= userNo %></a>
 								<ul class="dropdown-menu">
@@ -68,26 +73,39 @@
 					</div>
 				</div>
 			</div>
-           </div>
+		</div>
     </section>
     <!--================End Home Banner Area =================-->
 	
-        
-    <!--================Footer Area =================-->
-    <footer class="footer_area">
-        <div class="container">
-        	<div class="row footer_inner">
-        		<div class="col-lg-5 col-sm-6">
-        			<aside class="f_widget ab_widget">
-        				<div class="f_title">
-        					<h3>聯絡我們</h3>
+	<!--================About Area =================-->
+        <section class="about_area pad_top">
+        	<div class="container">
+        		<div class="about_inner row">
+        			<div class="col-lg-6">
+        				<div class="about_text">
+        					<h3>學習頁面後端管理<!--<br />that will change you--></h3>
+        					<p>歡迎進入後端管理平台!<br/><br/></p>
         				</div>
-        				<p>國立臺北商業大學 資訊管理系 <br />校址:100台北市中正區濟南路一段321號<br />電話:(02)33222777<br />統一編號:03763608</p>
-        				<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
-        			</aside>
+        			</div>
         		</div>
         	</div>
+        </section>
+        <!--================End About Area =================-->
+    
+    <!--================Footer Area =================-->
+    <footer class="footer_area_m">
+		<div id="Footer">
+        <div class="container">
+
+        	<aside class="f_widget ab_widget">
+        		<div class="f_title">
+        			<h3><br/>學習頁面後端管理</h3>
+        		</div>
+        				
+        		<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+        	</aside>
 		</div>	
+	</div>
     </footer>
     <!--================End Footer Area =================-->
         

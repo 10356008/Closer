@@ -86,6 +86,12 @@ body {
 
 }
 
+footer.footer_area_m{
+    height:150px;
+    width:100%;
+    background-color:#000;
+}
+
 [tabindex="-1"]:focus {
     outline: 0 ;
 }
@@ -107,6 +113,10 @@ h6 {
     margin-top: 0;
     margin-bottom: .5rem;
 	
+}
+
+h2. title{
+	margin-top:20px;
 }
 
 div{
@@ -279,6 +289,7 @@ caption {
 
 th {
     text-align: inherit
+
 }
 
 label {
@@ -9348,3 +9359,5 @@ a.text-dark:hover {
 }
 
 /*# sourceMappingURL=bootstrap.min.css.map */
+
+

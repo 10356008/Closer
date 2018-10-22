@@ -2707,7 +2707,8 @@ h6 {
 .footer_area {
   background: #000;
   padding-top: 230px;
-  padding-bottom: 120px; }
+  padding-bottom: 120px;
+  height:500px; }
 
 .f_title {
   margin-bottom: 35px; }
@@ -2811,3 +2812,7 @@ h6 {
 /*---------------------------------------------------- */
 
 /*# sourceMappingURL=style.css.map */
+
+/*社群分享按鈕*/
+
+/*社群分享按鈕*/
