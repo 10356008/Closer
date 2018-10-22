@@ -100,11 +100,11 @@
                     <!--~~~~~~~~~~~~~~~~~~~~~~-->                  
                     <tr>
                         <td><a span><!--文章編號--></a span></td>
-                        <td><a span><%= data[0].writingsID %></a span></td>                        
+                        <td><font color="#fff"><a span><%= data[0].writingsID %></a span></font></td>                        
                     </tr>
                     <tr>
                         <td><a span><!--文章標題--></a span></td>
-                        <td><font size="5"><strong><a span><%= data[0].writingsName %></font></strong></a span></td>                        
+                        <td width="300"><font size="5"><strong><a span><%= data[0].writingsName %></font></strong></a span></td>                        
                     </tr>
 					
 					<tr>
@@ -121,15 +121,34 @@
                         <td><a span><!--更改時間--></a span></td>
                         <td><a span><%= moment(data[0].editDate).format("YYYY-MM-DD")  %></a span></td>                        
                     </tr>                                                                              
-                    <!--~~~~~~~~~~~~~~~~~~~~~~-->                      
+                    <!--~~~~~~~~~~~~~~~~~~~~~~-->                     
                 </table> 
                 </div>
               </div>
               <!--********************************************-->
-			  	<button data-social="twitter">Share this to Twitter</button>
-				<button data-social="facebook">Share this to Facebook</button>
-				<button data-social="linkedin">Share this to LinkedIn</button>
-				<button data-social="googleplus">Google+</button>
+			  	<!--<button data-social="twitter">Share this to Twitter</button>
+              <button data-social="facebook">Share this to Facebook</button>
+              <button data-social="linkedin">Share this to LinkedIn</button>
+              <button data-social="googleplus">Google+</button>-->
+
+              
+              
+              <div style="margin-top:40px;margin-bottom:40px;margin-left:5px;margin-right:5px;text-align:center;">
+
+                  <!-- Twitter -->
+                  <a href="https://twitter.com/home?status=" title="Share on Twitter" target="_blank" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--twitter"><i class="fa fa-twitter fa-fw"></i> Twitter</a>
+                   <!-- Facebook -->
+                  <a href="https://www.facebook.com/sharer/sharer.php?u=" title="Share on Facebook" target="_blank" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--facebook"><i class="fa fa-facebook fa-fw"></i> Facebook</a>
+                  <!-- Google+ -->
+                  <a href="https://plus.google.com/share?url=" title="Share on Google+" target="_blank" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--googleplus"><i class="fa fa-google-plus fa-fw"></i> Google+</a>
+                  <!-- StumbleUpon -->
+                  <a href="http://www.stumbleupon.com/submit?url=" title="Share on StumbleUpon" target="_blank" data-placement="top" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--stumbleupon"><i class="fa fa-stumbleupon fa-fw"></i> Stumbleupon</a>
+                  <!-- LinkedIn --> 
+                  <a href="https://www.linkedin.com/shareArticle?mini=true&url=&title=&summary=" title="Share on LinkedIn" target="_blank" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--linkedin"><i class="fa fa-linkedin fa-fw"></i> LinkedIn</a>
+                  
+                  
+  
+                </div>
           </p>	        
         </div>    
         <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->      
